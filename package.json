@@ -1,0 +1,43 @@
+{
+    "name": "updatingapp",
+    "version": "0.1.0",
+    "author": "Glenn King",
+    "homepage": "./",
+    "description": "Example app with auto updater",
+    "main": "public/electron.js",
+    "repository": "https://github.com/glennking/updatingapp",
+    "build": {
+        "appId": "com.updatingapp",
+        "files": [
+            "build/**/*",
+            "node_modules/**/*"
+        ],
+        "directories": {
+            "buildResources": "assets"
+        }
+    },
+    "dependencies": {
+        "electron-updater": "^2.10.1",
+        "react": "^15.6.1",
+        "react-dom": "^15.6.1",
+        "react-scripts": "1.0.10",
+        "electron-is-dev": "^0.3.0"
+    },
+    "scripts": {
+        "preship": "yarn build",
+        "ship": "build --em.main=build/electron.js --win --ia32 -p always -c electron-builder.yml",
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject",
+        "electron-dev": "concurrently \"export BROWSER=none && yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+        "electron-pack": "build --em.main=build/electron.js --win --ia32 -c electron-builder.yml",
+        "preelectron-pack": "yarn build"
+    },
+    "devDependencies": {
+        "concurrently": "^3.5.0",
+        "electron": "^1.7.5",
+        "electron-builder": "^19.20.1",
+        "wait-on": "^2.0.2"
+    }
+}
