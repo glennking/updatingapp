@@ -1,0 +1,10 @@
+publish:
+    provider: github
+    token: 9b843f258be05f76f364a4e6fa0d21715d6b35a8
+appId: com.updatingapp
+files:
+    - build/**/*
+    - node_modules/**/*"
+directories:
+    buildResources: assets
+productName: updatingapp

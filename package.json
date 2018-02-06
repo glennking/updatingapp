@@ -6,6 +6,7 @@
     "description": "Example app with auto updater",
     "main": "public/electron.js",
     "repository": "https://github.com/glennking/updatingapp",
+    "license": "MIT",
     "build": {
         "appId": "com.updatingapp",
         "files": [
@@ -17,7 +18,7 @@
         }
     },
     "dependencies": {
-        "electron-updater": "^2.10.1",
+        "electron-updater": "^2.18.2",
         "react": "^15.6.1",
         "react-dom": "^15.6.1",
         "react-scripts": "1.0.10",
